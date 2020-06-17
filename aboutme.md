@@ -1,16 +1,12 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: and about my website
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+The website design is courtesy of https://deanattali.com/
 
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+### And me?
+I am a student, have been a student for many, many years. The Covid-19 pandemic means I had time to dabble in website building.  
+What I have learnt from this experience? That I cannot build my own website alone and **need** help from templates.  
+I like to think that with time I can make it better. Meanwhile, enjoy my journey through the bioiformatics jungle.
