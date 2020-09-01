@@ -2,7 +2,7 @@
 layout: post
 title: The Bioinformatics Confusion
 subtitle: My attempt at understanding genetics
-tags: [bioinformatics]
+tags: [bioinformatics, GWAS]
 comments: true
 ---
 
