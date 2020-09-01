@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Bioinformatics Confusion
-subtitle: My attempt at understanding _in silico_ genetics
+subtitle: My attempt at understanding genetics
 tags: [bioinformatics]
 comments: true
 ---
