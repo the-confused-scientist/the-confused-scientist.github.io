@@ -15,18 +15,22 @@ We (as in the imaginary reader, myself and I) still have no idea if this is a su
 Stay tuned.
 
 Best,
-
 The Confused Scientist
 
 -------------------
 
+These are slightly more detailed steps from the [github repository of pyGenomeTracks](https://github.com/deeptools/pyGenomeTracks)
+
 _Step 0_
+
 It is vital to understand that certain biopython packages are only friendly for Linux and Mac Operating Systems - even using a shell on windows to mimic a Linux OS was a nightmare for me (re-iterating how non-tech I am). I was lucky enough to get a Linux OS laptop loan from my internship supervisors.
 
 _Step 0.5_
+
 Understand how Linux works, skip if step 0 does not represent your case
 
 _Step 1_
+
 Download Anaconda3 and using
 ```
 $ conda create -n pygenometracks -c bioconda -c conda-forge pygenometracks python=3.7
@@ -34,10 +38,13 @@ $ conda create -n pygenometracks -c bioconda -c conda-forge pygenometracks pytho
 install the latest version of pygenometracks on python version 3.7
 
 _Step 1.5_
+
 To get a handle on how the software works, I wanted to first follow the instructions for the example data on the documentation of [pyGenomeTracks](https://github.com/deeptools/pyGenomeTracks). This is proving much more difficult than anticipated, therefore I am moving on to uploading my own bed files
 
 _Step 2_
+
 Making your own bed files
+
 * I made my files from running GWAS statistics from an article through [FUMA](https://fuma.ctglab.nl/)
 * This allows you to donwload different .txt files that you can convert into tracks files for pyGenomeTracks to use in the following way:
   - have all your files in the folder you are running pyGenomeTracks and anaconda from
@@ -49,8 +56,10 @@ Making your own bed files
   - it should show up as *(pygenometracks)* before your computer's name in the shell - meaning you have activated the correct environment
   - following this, you have to clean and prepare your bed files
 
-_Step 3_ [unfinished]
+_Step 3_
+
 **Preparing your files.**
+
 Make sure they are _.bed_ and give them approrpiate names to keep track
     * the files themselves, should have at least _#chrom_, _chromStart_, _chromEnd_ and _name_
     * make sure all of your files are on the same genome assembly (i.e. hg38 vs hg19)
@@ -59,14 +68,26 @@ Make sure they are _.bed_ and give them approrpiate names to keep track
      * It is important to have these files in the folder you have your pyGenomeTracks files and Anaconda3
     
 _Step 4_
+
 The only pre-processing step for pyGenomeTracks to run smoothly, is to make tracks files. For me, being less than tech-savvy, I had no clue what this meant so here is what I learnt:
 
 - you use this code
 ```
 $ make_tracks_file --trackFiles file1.bed file2.bw -o tracks.ini
 ```
-- using this, you can add multiple files to the tracks.ini (configuration file)
+- using this, you can add multiple files to the tracks.ini (configuration file, described below what this entails)
+- every filed you make, I would add and visualise before continuing to make sure what you are doing is going smoothly and to be able to customise it correctly
 
+_Step 5_
+
+Visualising images of the tracks - this is done by specifying the tracks and the region which should be shown in the ouput
+
+- you use this code
+```
+$ pyGenomeTracks --tracks tracks.ini --region chr2:10,000,000-11,000,000 --outFileName nice_image.pdf
+```
+
+_**Configuration file**_
 - a configuration file is, as described by [Lopez-Delisle et al. 2021](https://academic-oup-com.vu-nl.idm.oclc.org/bioinformatics/advance-article/doi/10.1093/bioinformatics/btaa692/5879987):
 
 *"[A] file [that] defines best practice, but it can also be fully customized by the user. In a configuration file, each track is defined as a block of parameters starting with its name [track name] and continues with the parameters for that track such as the file location, its title, height, color etc.*
