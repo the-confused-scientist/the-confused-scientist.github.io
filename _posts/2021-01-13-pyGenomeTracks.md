@@ -50,9 +50,13 @@ Making your own bed files
   - following this, you have to clean and prepare your bed files
 
 _Step 3_ [unfinished]
-Preapring your files.
-make sure they are _.bed_ and give them approrpiate names to keep track
-    * the files themselves, 
+**Preparing your files.**
+Make sure they are _.bed_ and give them approrpiate names to keep track
+    * the files themselves, should have at least _#chrom_, _chromStart_, _chromEnd_ and _name_
+    * make sure all of your files are on the same genome assembly (i.e. hg38 vs hg19)
+      * if these are not on the same, use [LiftOver](https://genome.ucsc.edu/cgi-bin/hgLiftOver) but keep in mind that this may affect your files so try to minimise how many times you use this
+     * I suggest saving them as *name*_*assembly*.bed_ to keep good track of everything
+     * It is important to have these files in the folder you have your pyGenomeTracks files and Anaconda3
     
 _Step 4_
 The only pre-processing step for pyGenomeTracks to run smoothly, is to make tracks files. For me, being less than tech-savvy, I had no clue what this meant so here is what I learnt:
