@@ -3,7 +3,7 @@ layout: post
 title: Journey through pyGenomeTracks
 subtitle: Tutorial on plotting genomic regions with multiple tracks [unfinished]
 cover-img: /assets/img/path.jpg
-tags: [python] [bioinformatics]
+tags: [python, bioinformatics]
 ---
 
 Dear reader,
