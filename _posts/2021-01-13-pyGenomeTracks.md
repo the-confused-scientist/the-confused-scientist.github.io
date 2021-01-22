@@ -76,7 +76,7 @@ The only pre-processing step for pyGenomeTracks to run smoothly, is to make trac
 $ make_tracks_file --trackFiles file1.bed file2.bw -o tracks.ini
 ```
 - using this, you can add multiple files to the tracks.ini (configuration file, described below what this entails)
-- every filed you make, I would add and visualise before continuing to make sure what you are doing is going smoothly and to be able to customise it correctly
+- every file you make, I would add and visualise before continuing to make sure what you are doing is going smoothly and to be able to customise it correctly
 
 _Step 5_
 
