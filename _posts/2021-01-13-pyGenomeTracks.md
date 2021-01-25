@@ -110,126 +110,67 @@ _**Configuration file**_
 *"[A] file [that] defines best practice, but it can also be fully customized by the user. In a configuration file, each track is defined as a block of parameters starting with its name [track name] and continues with the parameters for that track such as the file location, its title, height, color etc.*
 
 - and it contains functions like this:
-
-- **overlay_previous**:
-
-  - for *x_axis, epilogos, links, domains, bed, gtf, narrow_peak, bigwig, bedgraph, bedgraph_matrix, hlines, hic_matrix, scalebar, spacer*: no, yes, share-y
-
-- **where**:
-
-  - for *x_axis*: top, bottom
-
-  - for *scalebar*: left, right, top, bottom
-
-- **orientation**:
-
-  - for *epilogos, links, domains, bed, gtf, narrow_peak, bigwig, bedgraph, bedgraph_matrix, hlines, hic_matrix*: inverted, not set
-
-- **links_type**:
-
-  - for *links*: arcs, triangles, loops
-
-- **line_style**:
-
-  - for *links, hlines*: solid, dashed, dotted, dashdot
-
-- **compact_arcs_level**:
-
-  - for *links*: 0, 1, 2
-
-- **use_middle**:
-
-  - for *links, bedgraph*: true, false
-
-- **merge_transcripts**:
-
-  - for *domains, bed, gtf*: true, false
-
-- **style**:
-
-  - for *bed, gtf*: flybase, UCSC, tssarrow
-
-- **display**:
-
-  - for *bed, gtf*: collapsed, triangles, interleaved, stacked
-
-- **labels**:
-
-  - for *bed, gtf*: true, false
-
-- **global_max_row**:
-
-  - for *bed, gtf*: true, false
-
-- **arrowhead_included**:
-
-  - for *bed, gtf*: true, false
-
-- **all_labels_inside**:
-
-  - for *bed, gtf*: true, false
-
-- **labels_in_margin**:
-
-  - for *bed, gtf*: true, false
-
-- **type**:
-
-  - for *narrow_peak*: peak, box
-
-  - for *bedgraph_matrix*: matrix, lines
-
-- **show_data_range**:
-
-  - for *narrow_peak, bigwig, bedgraph, bedgraph_matrix, hlines*: true, false
-
-- **show_labels**:
-
-  - for *narrow_peak*: true, false
-
-- **use_summit**:
-
-  - for *narrow_peak*: true, false
-
-- **summary_method**:
-
-  - for *bigwig*: mean, average, max, min, stdev, dev, coverage, cov, sum
-
-  - for *bedgraph*: mean, average, max, min, stdev, dev, coverage, cov, sum, not set
-
-- **transform**:
-
-  - for *bigwig, bedgraph*: no, log, log1p, -log, log2, log10
-
-  - for *hic_matrix*: no, log, log1p, -log
-
-- **y_axis_values**:
-
-  - for *bigwig, bedgraph*: original, transformed
-
-- **nans_to_zeros**:
-
-  - for *bigwig, bedgraph*: true, false
-
-- **grid**:
-
-  - for *bigwig, bedgraph*: true, false
-
-- **rasterize**:
-
-  - for *bedgraph, bedgraph_matrix, hic_matrix*: true, false
-
-- **pos_score_in_bin**:
-
-  - for *bedgraph_matrix*: center, block
-
-- **plot_horizontal_lines**:
-
-  - for *bedgraph_matrix*: true, false
-
-- **show_masked_bins**:
-
-  - for *hic_matrix*: true, false
+=============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================
+parameter                      :doc:`tracks/x_axis`           :doc:`tracks/epilogos`         :doc:`tracks/links`            :doc:`tracks/domains`          :doc:`tracks/bed`              :doc:`tracks/gtf`              :doc:`tracks/narrow_peak`      :doc:`tracks/bigwig`           :doc:`tracks/bedgraph`         :doc:`tracks/bedgraph_matrix`  :doc:`tracks/hlines`           :doc:`tracks/hic_matrix`       :doc:`tracks/scalebar`       
+=============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================
+overlay_previous               no                             no                             no                             no                             no                             no                             no                             no                             no                             no                             no                             no                             no                           
+where                          bottom                                                                                                                                                                                                                                                                                                                                                                              left                         
+fontsize                       15                                                                                                                          12                             12                                                                                                                                                                                                                       12                           
+categories_file                                               not set                                                                                                                                                                                                                                                                                                                                                                           
+orientation                                                   not set                        not set                        not set                        not set                        not set                        not set                        not set                        not set                        not set                        not set                        not set                                                     
+links_type                                                                                   arcs                                                                                                                                                                                                                                                                                                                                               
+line_width                                                                                   not set                        0.5                            0.5                            0.5                            1                                                                                                                           0.5                                                           0.5                          
+line_style                                                                                   solid                                                                                                                                                                                                                                                   solid                                                                                      
+color                                                                                        blue                           #1f78b4                        #1f78b4                        #1f78b4                        #FF000080                      #33a02c                        #a6cee3                                                       black                                                         black                        
+alpha                                                                                        0.8                                                                                                                                                        1                              1                                                             1                                                             1                            
+max_value                                                                                    not set                        not set                        not set                                                       not set                        not set                        not set                        not set                        not set                        not set                                                     
+min_value                                                                                    not set                        not set                        not set                                                                                      not set                        not set                        not set                        not set                        not set                                                     
+ylim                                                                                         not set                                                                                                                                                                                                                                                                                                                                            
+compact_arcs_level                                                                           0                                                                                                                                                                                                                                                                                                                                                  
+use_middle                                                                                   false                                                                                                                                                                                     false                                                                                                                                                    
+border_color                                                                                                                black                          black                          black                                                                                                                                                                                                                                                 
+prefered_name                                                                                                               transcript_name                transcript_name                transcript_name                                                                                                                                                                                                                                       
+merge_transcripts                                                                                                           false                          false                          false                                                                                                                                                                                                                                                 
+labels                                                                                                                                                     true                           true                                                                                                                                                                                                                                                  
+style                                                                                                                                                      flybase                        flybase                                                                                                                                                                                                                                               
+display                                                                                                                                                    stacked                        stacked                                                                                                                                                                                                                                               
+max_labels                                                                                                                                                 60                             60                                                                                                                                                                                                                                                    
+global_max_row                                                                                                                                             false                          false                                                                                                                                                                                                                                                 
+gene_rows                                                                                                                                                  not set                        not set                                                                                                                                                                                                                                               
+arrow_interval                                                                                                                                             2                              2                                                                                                                                                                                                                                                     
+arrowhead_included                                                                                                                                         false                          false                                                                                                                                                                                                                                                 
+color_utr                                                                                                                                                  grey                           grey                                                                                                                                                                                                                                                  
+height_utr                                                                                                                                                 1                              1                                                                                                                                                                                                                                                     
+arrow_length                                                                                                                                               not set                        not set                                                                                                                                                                                                                                               
+all_labels_inside                                                                                                                                          false                          false                                                                                                                                                                                                                                                 
+labels_in_margin                                                                                                                                           false                          false                                                                                                                                                                                                                                                 
+show_data_range                                                                                                                                                                                                          true                           true                           true                           true                           true                                                                                       
+show_labels                                                                                                                                                                                                              true                                                                                                                                                                                                                   
+use_summit                                                                                                                                                                                                               true                                                                                                                                                                                                                   
+width_adjust                                                                                                                                                                                                             1.5                                                                                                                                                                                                                    
+type                                                                                                                                                                                                                     peak                           fill                           fill                           matrix                                                                                                                    
+negative_color                                                                                                                                                                                                                                          not set                        not set                                                                                                                                                  
+nans_to_zeros                                                                                                                                                                                                                                           false                          false                                                                                                                                                    
+summary_method                                                                                                                                                                                                                                          mean                           not set                                                                                                                                                  
+number_of_bins                                                                                                                                                                                                                                          700                            700                                                                                                                                                      
+transform                                                                                                                                                                                                                                               no                             no                                                                                           no                                                          
+log_pseudocount                                                                                                                                                                                                                                         0                              0                                                                                                                                                        
+y_axis_values                                                                                                                                                                                                                                           transformed                    transformed                                                                                                                                              
+second_file*                                                                                                                                                                                                                                            not set                        not set                                                                                                                                                  
+operation*                                                                                                                                                                                                                                              file                           file                                                                                                                                                     
+grid                                                                                                                                                                                                                                                    false                          false                                                                                                                                                    
+rasterize                                                                                                                                                                                                                                                                              false                          true                                                          true                                                        
+pos_score_in_bin                                                                                                                                                                                                                                                                                                      center                                                                                                                    
+plot_horizontal_lines                                                                                                                                                                                                                                                                                                 false                                                                                                                     
+colormap                                                                                                                                                                                                                                                                                                              viridis                                                       RdYlBu_r                                                    
+depth                                                                                                                                                                                                                                                                                                                                                                               100000                                                      
+show_masked_bins                                                                                                                                                                                                                                                                                                                                                                    false                                                       
+scale_factor                                                                                                                                                                                                                                                                                                                                                                        1                                                           
+x_center                                                                                                                                                                                                                                                                                                                                                                                                           not set                      
+size                                                                                                                                                                                                                                                                                                                                                                                                               not set                      
+scalebar_start_position                                                                                                                                                                                                                                                                                                                                                                                            not set                      
+scalebar_end_position                                                                                                                                                                                                                                                                                                                                                                                              not set                      
+=============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================  =============================
   
 
 I will slowly go through each of the customisations and I will highlight the most important and useful ones for a project such as mine
