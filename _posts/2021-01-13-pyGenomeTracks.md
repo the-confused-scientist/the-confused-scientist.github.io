@@ -112,3 +112,70 @@ _**Configuration file**_
 - and it contains parameters described [here](https://pygenometracks.readthedocs.io/en/latest/content/possible-parameters.html)
 
 I will slowly go through each of the customisations and I will highlight the most important and useful ones for a project such as mine
+
+
+---------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+File            File					                          Best
+Type		        Use				                            	Parameters
+-------------- --------------------------------------- --------------------------------------------------------------------------------------------
+_bed_		        This type of file is ideal for		      - height = 3-5 (for genes), 1-3 (for SNPs) - depends on your publishing format 
+		            all kinds of bed file (bed4+):		      - style (for genes only) = UCSC (blocks with arrowhead),
+                [chr, start, end, name(, etc.)]					                           tssarrow (rectangular blocks with arrows at the top)
+	            	Used for genes, SNPs, variants,		      - color = any [HEX code](https://www.color-hex.com/)
+		            basically any region blocks.			                or [matplotlib](https://matplotlib.org/3.1.0/gallery/color/named_colors.html)
+		            .bed files also can be used for	      	- fontsize = 10-15 (crucial for genes labels! also depends on publishing format)
+	            	different types of files, will	      	- labels = true (genes) or false (if you want the plot to be minimal)
+	             	explain for each.			                  - display = stacked (best for genes, plotted on different levels)
+								                                                    collapsed (best for plotting SNPs on one line, without labels)
+                                                                    triangles (plots triangles based on length of the coordinates)
+                                                                    interleaved (plots on fewer levels)
+                                                        - **file_type** = [bed](https://pygenometracks.readthedocs.io/en/latest/content/tracks/bed.html)
+                                                        - file = your_file.bed
+                                                        - title = your_title (if you want this plotted on the right hand side as a label then add)
+
+_bedgraph_	    UCSC defines bedgraph, but you can	    - **use_middle** = true (this part is crucial if you use the simplified bed file so that 
+		            also use a simplified version, as a			                   the value specified is thought of as the peak point. This is not useful	
+		            .bed file with:						                                  if you use the conventional [bedgraph file]http://genome.ucsc.edu/goldenPath/help/bedgraph.html)
+		            [chr, start, end, value]		            - height = 3
+                to plot a peak graph for frequencies	  - color = same as before, use lighter colors especially if you want to overlay a bedfile
+                for example.					                            to match the coordinates of your plot, such as follows:
+							                                          - (overlay_previous = share-y --> this would be a parameter for the bed file type you want  
+                                                           to overlay, i.e. plot over each other; share-y means that the y axis will be shared
+                                                           and therefore they will be proportional to each other)
+                                                        - type = fill (default, makes an area type graph)
+                                                                 line (lineplot)
+                                                                 points (scatterplot, but if you have only basic, this is not a good visualisation)
+                                                        - nans_to_zeros = true (recommended in case you have NaNs)
+                                                        - number_of_bins = play with this to see this best visualisation for your plot
+                                                        - **file_type** = [bedgraph](https://pygenometracks.readthedocs.io/en/latest/content/tracks/bedgraph.html)
+                                                        - file = your_file.bed
+                                                        - title = your_title (if you want this plotted on the right hand side as a label then add)
+
+_links_		    This type of file can be useful for	      - color = (as before) I liked to use darker colors here
+              visualising links/intervals between	      - links_type = arcs (good for general links) 
+              regions (such as _basic_ chromatin		                   triangles (more compact than arcs)
+              interactions). A .bed file is also		                   loops (pretty weird, wouldn't recommend)
+              useful here: [chr1, start1, end1,]	      - line_width = 2 (the more interactions you have, the less this nr should be)
+              [chr2, start2, end2]			                - line_style = solid, dashed, dotted or dashdot (all nice, depends on you)
+                                                        - orientation = inverted (this is good if you want to plot interactions at the bottom of your graph)
+                                                        - alpha = 1 (or lower for more transparent lines)
+                                                        - height = 15 (if you have a lot of links, this is good to play around with)
+                                                        - compact_arcs_level = 1 (this means your arcs will not be super compact, choose between 0,1 and 2)
+                                                        - **file_type** = [links](https://pygenometracks.readthedocs.io/en/latest/content/tracks/links.html)
+                                                        - file = your_file.bed
+                                                        - title = your_title (if you want this plotted on the right hand side as a label then add)
+
+_vlines_	    This type is nice to delimit areas	      - **file_type** = vlines (no extra resource for this)
+              on your plot that you can highlight	      - file = your_file.bed
+              later. Use a .bed file:
+              [chr, start, start+1]
+
+_x-axis_	    Plots the genomic region and chr#	        - fontsize = 15
+              I like to put this twice, at the top 
+              and at the bottom
+
+_spacer_	    This adds a space between your plots	    - height = 0.5 (or higher)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
