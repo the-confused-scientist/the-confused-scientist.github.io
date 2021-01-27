@@ -118,9 +118,7 @@ I will slowly go through each of the customisations and I will highlight the mos
 
 | File Type | File Use | Best Parameters |
 | --- | --- | --- |
-| _bed_	| This type of file is ideal for all kinds of bed file (bed4+):	[chr, start, end, name(, etc.)]. Used for genes, SNPs, variants, basically any region blocks. .bed files also can be used for different types of files, explained below. | - height = 3-5 (for genes), 1-3 (for SNPs) - depends on your publishing format 
-| - style (for genes only) = UCSC (blocks with arrowhead), tssarrow (rectangular blocks with arrows at the top) |
-| - color = any [HEX code](https://www.color-hex.com/) or [matplotlib](https://matplotlib.org/3.1.0/gallery/color/named_colors.html) |
+| _bed_	| This type of file is ideal for all kinds of bed file (bed4+):	[chr, start, end, name(, etc.)]. Used for genes, SNPs, variants, basically any region blocks. .bed files also can be used for different types of files, explained below. | - height = 3-5 (for genes), 1-3 (for SNPs) - depends on your publishing format | - style (for genes only) = UCSC (blocks with arrowhead), tssarrow (rectangular blocks with arrows at the top) - color = any [HEX code](https://www.color-hex.com/) or [matplotlib](https://matplotlib.org/3.1.0/gallery/color/named_colors.html) |
 | - fontsize = 10-15 (crucial for genes labels! also depends on publishing format) |
 | | | - labels = true (genes) or false (if you want the plot to be minimal) |
 | | | - display = stacked (best for genes, plotted on different levels), collapsed (best for plotting SNPs on one line, without labels), triangles (plots triangles based on length of the coordinates), or interleaved (plots on fewer levels) |
