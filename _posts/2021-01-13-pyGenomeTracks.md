@@ -116,24 +116,19 @@ I will slowly go through each of the customisations and I will highlight the mos
 
 ---------------------------
 
---------------------------------------------------------------------------------------------------------------------------------------------------
-File            File					                          Best
-Type		        Use				                            	Parameters
--------------- --------------------------------------- --------------------------------------------------------------------------------------------
-_bed_		        This type of file is ideal for		      - height = 3-5 (for genes), 1-3 (for SNPs) - depends on your publishing format 
-		            all kinds of bed file (bed4+):		      - style (for genes only) = UCSC (blocks with arrowhead),
-                [chr, start, end, name(, etc.)]					                           tssarrow (rectangular blocks with arrows at the top)
-	            	Used for genes, SNPs, variants,		      - color = any [HEX code](https://www.color-hex.com/)
-		            basically any region blocks.			                or [matplotlib](https://matplotlib.org/3.1.0/gallery/color/named_colors.html)
-		            .bed files also can be used for	      	- fontsize = 10-15 (crucial for genes labels! also depends on publishing format)
-	            	different types of files, will	      	- labels = true (genes) or false (if you want the plot to be minimal)
-	             	explain for each.			                  - display = stacked (best for genes, plotted on different levels)
-								                                                    collapsed (best for plotting SNPs on one line, without labels)
-                                                                    triangles (plots triangles based on length of the coordinates)
-                                                                    interleaved (plots on fewer levels)
-                                                        - **file_type** = [bed](https://pygenometracks.readthedocs.io/en/latest/content/tracks/bed.html)
-                                                        - file = your_file.bed
-                                                        - title = your_title (if you want this plotted on the right hand side as a label then add)
+| File Type | File Use | Best Parameters |
+| --- | --- | --- |
+| _bed_	| This type of file is ideal for all kinds of bed file (bed4+):	[chr, start, end, name(, etc.)]. Used for genes, SNPs, variants, basically any region blocks. .bed files also can be used for different types of files, explained below. | - height = 3-5 (for genes), 1-3 (for SNPs) - depends on your publishing format 
+| | | - style (for genes only) = UCSC (blocks with arrowhead), tssarrow (rectangular blocks with arrows at the top) |
+| | | - color = any [HEX code](https://www.color-hex.com/) or [matplotlib](https://matplotlib.org/3.1.0/gallery/color/named_colors.html) |
+| | | - fontsize = 10-15 (crucial for genes labels! also depends on publishing format) |
+| | | - labels = true (genes) or false (if you want the plot to be minimal) |
+| | | - display = stacked (best for genes, plotted on different levels), collapsed (best for plotting SNPs on one line, without labels), triangles (plots triangles based on length of the coordinates), or interleaved (plots on fewer levels) |
+| | | - **file_type** = [bed](https://pygenometracks.readthedocs.io/en/latest/content/tracks/bed.html) |
+| | | - file = your_file.bed |
+| | | - title = your_title (if you want this plotted on the right hand side as a label then add) |
+
+
 
 _bedgraph_	    UCSC defines bedgraph, but you can	    - **use_middle** = true (this part is crucial if you use the simplified bed file so that 
 		            also use a simplified version, as a			                   the value specified is thought of as the peak point. This is not useful	
