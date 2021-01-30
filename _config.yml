@@ -13,7 +13,6 @@ description: An attempt at documenting my life and the pursuit of sciencedom
 
 navbar-links:
   About Me: "aboutme"
-  Bioinformatics: "bioinformatics-first-post"
 
 # --- Logo --- #
 
@@ -35,7 +34,7 @@ navbar-links:
 # Uncomment the links you want to show and add your information to each one.
 # If you don't want to show a link to an RSS feed, set rss to "false".
 social-network-links:
-  email: "raluca_blujdea@yahoo.com"
+ # email: "raluca_blujdea@yahoo.com"
  # facebook: deanattali
   github: the-confused-scientist
  # twitter: daattali
@@ -82,7 +81,7 @@ excerpt_length: 50
 navbar-col: "#008B8B"
 navbar-text-col: "#2F4F4F"
 navbar-border-col: "#EAEAEA"
-page-col: "#F0FFFF"
+page-col: "#FFFAFA"
 link-col: "#008AFF"
 hover-col: "#0085A1"
 footer-col: "#008B8B"
@@ -163,7 +162,7 @@ date_format: "%B %-d, %Y"
 # --- You don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Vancouver"
+timezone: "Europe/Amsterdam"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
