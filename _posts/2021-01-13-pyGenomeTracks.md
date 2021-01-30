@@ -59,14 +59,14 @@ _Step 3_
   * If you want .bed files with more info - check [this website](https://bedtools.readthedocs.io/en/latest/content/general-usage.html) with details of the kinds of information bed files require
   * Any other file types can be found on [the PGT website](https://pygenometracks.readthedocs.io/en/latest/content/all_tracks.html)
 * Make sure all of your files are on the same genome assembly (i.e. hg38 vs hg19)
-    * if these are not on the same, use [LiftOver](https://genome.ucsc.edu/cgi-bin/hgLiftOver) but keep in mind that this may affect your files so try to minimise how many times you use this
-     * I suggest saving them as e.g. *name*_*assembly*.bed_ to keep good track of everything
+    * if these are not on the same, use [LiftOver](https://genome.ucsc.edu/cgi-bin/hgLiftOver) but keep in mind that this may affect your files so try to minimise how many times you use this, also if you have large files it is best to use the command line command of liftOver (only for Unix OS though) which I explain further in my post on LocusZoom plots.
+     * I suggest saving them as e.g. *name*_*assembly*.file-type_ to keep good track of everything
 
 _Step 4_
 
 * All files can then be converted into tracks files for pyGenomeTracks to use:
   - have all your files (in the right format) in the folder you are running PGT and conda from
-  - you must be on the **shell of your OS in the same folder**, and have pyGenomeTracks installed (see Step 1)
+  - you must be on the **shell/command prompt of your OS in the same folder**, and have pyGenomeTracks installed (see Step 1)
   - to make sure you are running the correct environment, it's important to run:
   ```
   $ conda activate pygenometracks
@@ -86,7 +86,7 @@ The only pre-processing step for pyGenomeTracks to run smoothly, is to make trac
 $ make_tracks_file --trackFiles file1.bed file2.bw -o tracks.ini
 ```
 - this gives you a track.ini file (configuration file, described below what this entails) which you can open as a text file where you can edit inside of, without running the previous command multiple times
-[pic of this]
+[config file example](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/config_1.jpg)
 - using this, you can add multiple files directly to the tracks.ini file or you can make one file, then change in the text software and save with different names each time
 - every file you add, I would visualise (Step 6) before continuing to make sure what you are doing is going smoothly and to be able to customise it correctly
 
@@ -99,7 +99,7 @@ Visualising images of the tracks - this is done by specifying the tracks and the
 $ pyGenomeTracks --tracks tracks.ini --region chr2:10,000,000-11,000,000 --outFileName nice_image.pdf
 ```
 - and the file _nice_image.pdf (or png or whatever you want)_ will come out in the same folder and can look something like:
-[pic of PGT example]
+[pic of PGT example](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/grl1.png)
 
 Et voilà - you can now visualise your GWAS summary in a super customisable way, making ready to publish figures
 
@@ -128,9 +128,11 @@ _[bed]_
 	- file = your_file.bed
 	- title = your_title (if you want this plotted on the right hand side as a label then add)
 
+[genes](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/genes.jpg)
+
 _[bedgraph]_
 - UCSC defines bedgraph, but you can also use a simplified version, as a .bed file with: [chr, start, end, value] to plot a peak graph for frequencies for example.
-	- **use_middle** = true (this part is crucial if you use the simplified bed file so that the value specified is thought of as the peak point. This is not useful if you use the conventional [bedgraph file]http://genome.ucsc.edu/goldenPath/help/bedgraph.html)
+	- **use_middle** = true (this part is crucial if you use the simplified bed file so that the value specified is thought of as the peak point. This is not useful if you use the conventional [bedgraph file](http://genome.ucsc.edu/goldenPath/help/bedgraph.html)
 	- height = 3
 	- color = same as before, use lighter colors especially if you want to overlay a bedfile to match the coordinates of your plot, such as follows:
 	- (overlay_previous = share-y --> this would be a parameter for the bed file type you want to overlay, i.e. plot over each other; share-y means that the y axis will be shared and therefore they will be proportional to each other)
@@ -140,6 +142,8 @@ _[bedgraph]_
 	- **file_type** = [bedgraph](https://pygenometracks.readthedocs.io/en/latest/content/tracks/bedgraph.html)
 	- file = your_file.bed
 	- title = your_title (if you want this plotted on the right hand side as a label then add)
+	
+[frequency](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/bedgraph.jpg)
 
 _[links]_
 - This type of file can be useful for visualising links/intervals between regions (such as _basic_ chromatin interactions). A .bed file is also useful here: [chr1, start1, end1,chr2, start2, end2]
@@ -154,11 +158,16 @@ _[links]_
 	- **file_type** = [links](https://pygenometracks.readthedocs.io/en/latest/content/tracks/links.html)
 	- file = your_file.bed
 	- title = your_title (if you want this plotted on the right hand side as a label then add)
+	
+[HiC loops](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/links.png)
 
 _[vlines]_
 - This type is nice to delimit areas on your plot that you can highlight later. Use a .bed file: [chr, start, start+1]
 	- **file_type** = vlines (no extra resource for this)
 	- file = your_file.bed
+	- line_width = 2
+	
+[vlines](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/vlines.jpg)
              
 _[x-axis]_	    
 - Plots the genomic region and chr#. I like to put this twice, at the top and at the bottom
@@ -167,5 +176,7 @@ _[x-axis]_
 _[spacer]_
 - This adds a space between your plots	    
 	- height = 0.5 (or higher)
+
+[x and spacer](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/x_axis%20and%20spacer.jpg)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
