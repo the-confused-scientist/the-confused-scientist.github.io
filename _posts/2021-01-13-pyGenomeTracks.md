@@ -86,7 +86,7 @@ The only pre-processing step for pyGenomeTracks to run smoothly, is to make trac
 $ make_tracks_file --trackFiles file1.bed file2.bw -o tracks.ini
 ```
 - this gives you a track.ini file (configuration file, described below what this entails) which you can open as a text file where you can edit inside of, without running the previous command multiple times
-[config file example](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/config_1.jpg)
+![config file example](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/config_1.jpg)
 - using this, you can add multiple files directly to the tracks.ini file or you can make one file, then change in the text software and save with different names each time
 - every file you add, I would visualise (Step 6) before continuing to make sure what you are doing is going smoothly and to be able to customise it correctly
 
@@ -99,7 +99,7 @@ Visualising images of the tracks - this is done by specifying the tracks and the
 $ pyGenomeTracks --tracks tracks.ini --region chr2:10,000,000-11,000,000 --outFileName nice_image.pdf
 ```
 - and the file _nice_image.pdf (or png or whatever you want)_ will come out in the same folder and can look something like:
-[pic of PGT example](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/grl1.png)
+![pic of PGT example](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/grl1.png)
 
 Et voilà - you can now visualise your GWAS summary in a super customisable way, making ready to publish figures
 
@@ -128,7 +128,7 @@ _[bed]_
 	- file = your_file.bed
 	- title = your_title (if you want this plotted on the right hand side as a label then add)
 
-[genes](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/genes.jpg)
+![genes](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/genes.jpg)
 
 _[bedgraph]_
 - UCSC defines bedgraph, but you can also use a simplified version, as a .bed file with: [chr, start, end, value] to plot a peak graph for frequencies for example.
@@ -143,7 +143,7 @@ _[bedgraph]_
 	- file = your_file.bed
 	- title = your_title (if you want this plotted on the right hand side as a label then add)
 	
-[frequency](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/bedgraph.jpg)
+![frequency](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/bedgraph.jpg)
 
 _[links]_
 - This type of file can be useful for visualising links/intervals between regions (such as _basic_ chromatin interactions). A .bed file is also useful here: [chr1, start1, end1,chr2, start2, end2]
@@ -159,7 +159,7 @@ _[links]_
 	- file = your_file.bed
 	- title = your_title (if you want this plotted on the right hand side as a label then add)
 	
-[HiC loops](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/links.png)
+![HiC loops](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/links.png)
 
 _[vlines]_
 - This type is nice to delimit areas on your plot that you can highlight later. Use a .bed file: [chr, start, start+1]
@@ -167,7 +167,7 @@ _[vlines]_
 	- file = your_file.bed
 	- line_width = 2
 	
-[vlines](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/vlines.jpg)
+![vlines](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/vlines.jpg)
              
 _[x-axis]_	    
 - Plots the genomic region and chr#. I like to put this twice, at the top and at the bottom
@@ -177,6 +177,6 @@ _[spacer]_
 - This adds a space between your plots	    
 	- height = 0.5 (or higher)
 
-[x and spacer](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/x_axis%20and%20spacer.jpg)
+![x and spacer](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/x_axis%20and%20spacer.jpg)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
