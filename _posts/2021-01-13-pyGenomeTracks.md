@@ -102,7 +102,7 @@ $ pyGenomeTracks --tracks tracks.ini --region chr2:10,000,000-11,000,000 --outFi
 ```
 - and the file _nice_image.pdf (or png or whatever you want)_ will come out in the same folder and can look something like:
 
-![pic of PGT example](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/grl1.png)
+![pic of PGT example](assets/img/grl1.png)
 
 Et voilà - you can now visualise your GWAS summary in a super customisable way, making ready to publish figures
 
@@ -131,7 +131,7 @@ _[bed]_
 	- file = your_file.bed
 	- title = your_title (if you want this plotted on the right hand side as a label then add)
 
-![genes](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/genes.jpg)
+![genes](assets/img/genes.jpg)
 
 _[bedgraph]_
 - UCSC defines bedgraph, but you can also use a simplified version, as a .bed file with: [chr, start, end, value] to plot a peak graph for frequencies for example.
@@ -146,7 +146,7 @@ _[bedgraph]_
 	- file = your_file.bed
 	- title = your_title (if you want this plotted on the right hand side as a label then add)
 	
-![frequency](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/bedgraph.jpg)
+![frequency](assets/img/bedgraph.jpg)
 
 _[links]_
 - This type of file can be useful for visualising links/intervals between regions (such as _basic_ chromatin interactions). A .bed file is also useful here: [chr1, start1, end1,chr2, start2, end2]
@@ -162,7 +162,7 @@ _[links]_
 	- file = your_file.bed
 	- title = your_title (if you want this plotted on the right hand side as a label then add)
 	
-![HiC loops](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/links.png)
+![HiC loops](assets/img/links.png)
 
 _[vlines]_
 - This type is nice to delimit areas on your plot that you can highlight later. Use a .bed file: [chr, start, start+1]
@@ -170,7 +170,7 @@ _[vlines]_
 	- file = your_file.bed
 	- line_width = 2
 	
-![vlines](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/vlines.jpg)
+![vlines](assets/img/vlines.jpg)
              
 _[x-axis]_	    
 - Plots the genomic region and chr#. I like to put this twice, at the top and at the bottom
@@ -180,6 +180,6 @@ _[spacer]_
 - This adds a space between your plots	    
 	- height = 0.5 (or higher)
 
-![x and spacer](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/_posts/x_axis%20and%20spacer.jpg)
+![x and spacer](assets/img/x_axis%20and%20spacer.jpg)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
