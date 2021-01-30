@@ -87,7 +87,7 @@ $ make_tracks_file --trackFiles file1.bed file2.bw -o tracks.ini
 ```
 - this gives you a track.ini file (configuration file, described below what this entails) which you can open as a text file where you can edit inside of, without running the previous command multiple times
 
-![config file](https://github.com/the-confused-scientist/the-confused-scientist.github.io/blob/master/assets/img/config_1.jpg)
+![config file](/assets/img/config_1.jpg)
 
 - using this, you can add multiple files directly to the tracks.ini file or you can make one file, then change in the text software and save with different names each time
 - every file you add, I would visualise (Step 6) before continuing to make sure what you are doing is going smoothly and to be able to customise it correctly
